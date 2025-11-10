@@ -1,0 +1,21 @@
+https://docs.godotengine.org/en/stable/tutorials/2d/index.html
+
+
+Architecture 		- Felycia
+
+Multiplayer 		- Jasmin
+
+Physic 			- Jasmin
+
+Kynematic character 	- Jérémie
+
+Audio 			- Jérémie
+
+Animation 		- Jasmin
+
+3D 			- Felycia
+
+GDScript 		- Felycia
+
+Object class 		- Jérémie
+
