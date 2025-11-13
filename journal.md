@@ -68,6 +68,13 @@ Godot game engine
 ---
 ### Tâches réalisées
 
+Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation et le multijoueur. Les guide sont accessible dans notre projet git :
+
+#### physics.md
+#### multiplayer.md
+#### animation.md
+
+##### py
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
