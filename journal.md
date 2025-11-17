@@ -170,8 +170,13 @@ Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation 
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
+Les guides ont tous été fait avec de l'IA. Je lui ai communiqué les paramètres importants qui concernent le projet, et lui ai demandé de générer un guide. Le guide présenté est celui qui a été généré après plusieurs questions et correctins de l'IA.
+
 ---
 ### Les difficultés rencontrées
 
+J'ai de la difficulté à obtenir le bon résultat de mes recherches IA. Lorsque je demandait à ChatGPT de me générer une réponse en markdown, seulement la première partie de la réponse était bien formattée, et Chatgpt me jurait que tout la réponse était en markdown, quand elle ne l'était clairement pas. C'était une expérience frustrante, mais un bon rappel que tous les IA ne sont pas égaux, surtout si elles sont gratuites.
+
 ---
 ### Les objectifs de la semaine suivante
+Intégrer les apprentissages dans un jeu à développer nous-mêmes en guise de démonstration.
