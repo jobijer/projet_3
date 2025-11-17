@@ -51,6 +51,10 @@ Il est très dur pour moi de comprendre les concepts expliqués dans la document
 
 Faire plus de manipulation directe avec le moteur Godot, avec un tutoriel qui part du début, pour avoir une base solide et m'aider dans ma compréhension du sujet.
 
+Plan:
+- Trouver un tutoriel de jeu 3D réalisable
+- Décider comment nous allons le personnaliser
+
 
 
 

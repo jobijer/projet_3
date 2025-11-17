@@ -10,6 +10,4 @@ config_version=5
 
 [application]
 
-config/name="projet_godot"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.5")
