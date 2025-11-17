@@ -32,6 +32,10 @@ Lecture de la documentation suivantes :
 - Recording with microphone
 - Text to speech
 
+Exercices step by step (tutorial) suivants :
+
+- Nodes and Scenes
+- Creating instances
 
 ---
 ### Apprentissages faits avec l’aide de l’IA
