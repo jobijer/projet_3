@@ -16,21 +16,36 @@ Godot game engine
 
 ## Jérémie
 
-### 2025-11-10
+### 2025-11-16
 
 ---
 ### Tâches réalisées
 
+Lecture de la documentation suivantes :
+
+- Kynematic character 2D
+- Object class
+- Audio buses
+- Audio effects
+- Audio streams
+- Sync the gameplay with audio and music
+- Recording with microphone
+- Text to speech
+
+
 ---
 ### Apprentissages faits avec l’aide de l’IA
+
+J'ai demandé au AI de m'expliquer, me résumer et de me générer un fichier MarkDown de chaque sujet m'entionné ci-dessus.
 
 ---
 ### Les difficultés rencontrées
 
+Il est très dur pour moi de comprendre les concepts expliqués dans la documentation de Godot. Comme j'ai fait plus de lecture que de manipulation direct avec Godot rend la compréhension difficile. Donc les termes techniques reste abstrait.
 ---
 ### Les objectifs de la semaine suivante
 
-
+Faire plus de manipulation directe avec le moteur Godot, avec un tutoriel qui part du début, pour avoir une base solide et m'aider dans ma compréhension du sujet.
 
 
 
