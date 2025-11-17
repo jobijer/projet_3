@@ -180,3 +180,36 @@ J'ai de la difficulté à obtenir le bon résultat de mes recherches IA. Lorsque
 ---
 ### Les objectifs de la semaine suivante
 Intégrer les apprentissages dans un jeu à développer nous-mêmes en guise de démonstration.
+
+
+# Semaine 3
+
+---
+## Jasmin
+
+### 2025-11-10
+
+Cette semaine, en classe, on a été trouvé un exemple de code simple pour un FPS dans Godot. Notre but cette semaine est de joueur avec les plus de paramètres possible pour optimmiser notre jeu. Mes tâches sont de :
+1. Trouver comment remplacer le gun_model.glb par la version gun_model_2.glb que j'ai modifié avec Blender
+2. Modifier les paramètres de tir pour que le nouveau modèle d'arme aie son comportement propre à lui (Les projectiles sont plus gros, font plus de dégat, l'arme tire plus lentement, etc)
+3. Trouver un moyen de permettre les deux versions de l'arme dans le jeu. Par exemple, l'arme du joueur pourrait automatiquement s'améliorer lorsque le score atteinds 10 points
+4. Appliquer les connaissances acquises dans la manipulation des armes pour créer une version alternée des enemis
+5. Si possible, coder de nouveau comportement pour les enemis aussi
+---
+### Tâches réalisées
+
+
+
+##### py
+---
+### Apprentissages faits avec l’aide de l’IA
+
+- J'ai commencé à demander à Chatgpt des questions sur les modèles d'arme contenu dans le jeu. Chatgpt m'a indiqué quels fichiers seraient compatible avec Blender, et m'a expliqué comment les réimporter pour Godot. Chatgpt m'a aussi expliqué somairement comment Godot gérer ces modèles. Godot utilise bel et bien des fichiers glb, mais avant de pouvoir être utilisé, ces fichiers sont manipulé dans des versions .glb.import qui contiennent toutes les données importantes pour Godot.
+
+Au moment de ce commit, c'est ou je suis rendu. J'ai mon gun_model_2.glb, et j'essaye de remplacer le modèle précédent avec.
+---
+### Les difficultés rencontrées
+
+
+---
+### Les objectifs de la semaine suivante
