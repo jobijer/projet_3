@@ -198,9 +198,10 @@ Cette semaine, en classe, on a été trouvé un exemple de code simple pour un F
 ---
 ### Tâches réalisées
 
-
-
-##### py
+##### Update 1
+J'avais importé et modifié un fichier sur blender, et avait beaucoup de difficulté à bien l'importer dans Godot. Je me suis rendu compte que je n'en savais pas asser pour même comprendre ou était mon erreur, et j'ai
+décidé de prendre du temps pour me familiariser avec Blender d'abord. J'ai changé d'IA et j'ai demandé à Gemini cette fois-ci de m'aider dans ma recherche. L'analyse elle-même était très comparable à mon expérience
+avec ChatGPT, mais en plus l'IA m'a donné un lien sur une bonne vidéo Youtube sur le sujet. Je suis reparti de tout début avec mon fichier, et au final je suis arrivé avec war_gun_model.glb, qui est mieux fait que le premier. Il me reste à revérifier si j'ai bien exporté le fichier, mais je me sens maintenant en meilleure position pour trouver le problème.
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
