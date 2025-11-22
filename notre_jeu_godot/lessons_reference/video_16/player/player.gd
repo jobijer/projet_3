@@ -1,9 +1,34 @@
 extends CharacterBody3D
 
+# --- Scene References ---
+@export var gun_model: Node3D
+@export var war_gun_model: Node3D
+
+# --- Game Variables ---
+# Remove: var player_score: int = 0
+const SWITCH_SCORE_THRESHOLD: int = 10
+var current_gun: Node3D = null
+var has_switched: bool = false # NEW: Prevents switching repeatedly
+var game_manager = null
 
 func _ready():
+	var camera = %Camera3D
+	if camera:
+		gun_model = camera.get_node("gun_model")
+		war_gun_model = camera.get_node("war_gun_model")
+		if gun_model == null or war_gun_model == null:
+			push_error("Failed to find gun models under Camera3D!")
+		
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	%Marker3D.rotation_degrees.y += 2.0
+	_set_active_weapon(gun_model)
+	gun_model.visible = true
+	
+	game_manager = get_parent()
+	if game_manager == null or not game_manager.has_method("increase_score"): # Basic check
+		push_error("Could not find the game manager node or script.")
+	if gun_model != null:
+		print("Gun model visibility after set:", gun_model.visible)
 
 
 func _unhandled_input(event):
@@ -42,7 +67,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and %Timer.is_stopped():
 		shoot_bullet()
 
-
 func shoot_bullet():
 	const BULLET_3D = preload("bullet_3d.tscn")
 	var new_bullet = BULLET_3D.instantiate()
@@ -52,3 +76,27 @@ func shoot_bullet():
 
 	%Timer.start()
 	%AudioStreamPlayer.play()
+
+#---Main Logic ---
+
+func _process(delta):
+	# Check the global score every frame
+	if game_manager != null and not has_switched:
+		# Ensure game_manager (the node with game.gd) has the variable 'player_score'
+		if game_manager.player_score >= 3:
+			# Perform the switch
+			_set_active_weapon(war_gun_model)
+			has_switched = true
+
+# Function to handle visibility and update the current_gun variable
+func _set_active_weapon(target_gun: Node3D):
+	# ... (same logic as before: hide all, show target) ...
+	if gun_model != null:
+		gun_model.visible = false
+	if war_gun_model != null:
+		war_gun_model.visible = false
+		
+	if target_gun != null:
+		target_gun.visible = true
+		current_gun = target_gun
+		print("Switched to: ", current_gun.name)
