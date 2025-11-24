@@ -51,15 +51,6 @@ Il est très dur pour moi de comprendre les concepts expliqués dans la document
 
 Faire plus de manipulation directe avec le moteur Godot, avec un tutoriel qui part du début, pour avoir une base solide et m'aider dans ma compréhension du sujet.
 
-Plan:
-- Trouver un tutoriel de jeu 3D réalisable
-- Décider comment nous allons le personnaliser
-
-
-
-
-
-
 
 ---
 ## Felicya
@@ -100,6 +91,7 @@ Tutoriel 3D Sections:
 - Killing the player
 
 Discussion avec l'IA et lectures sur l'architecture, le 3D et GDScript
+
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
@@ -136,6 +128,7 @@ Discussion avec l'IA et lectures sur l'architecture, le 3D et GDScript
         [https://chatgpt.com/share/6918fbd1-271c-800a-8f1d-92a58d26ee0c](https://chatgpt.com/share/6918fbd1-271c-800a-8f1d-92a58d26ee0c)
 
 - Jeu open-world
+
     Je lui ai demandé comment serait structuré un jeu open-world dans Godot.
     [https://chatgpt.com/share/6918fbd1-271c-800a-8f1d-92a58d26ee0c](https://chatgpt.com/share/6918fbd1-271c-800a-8f1d-92a58d26ee0c)
 ---
@@ -147,6 +140,20 @@ Ce n'est pas non plus très intéressant de lire ce que l'IA a écrit. Je préf�
 ---
 ### Les objectifs de la semaine suivante
 Intégrer les apprentissages dans un jeu à développer nous-mêmes en guise de démonstration.
+
+Plan:
+- Trouver un tutoriel de jeu 3D réalisable
+- Décider comment nous allons le personnaliser
+- Regarder l'intégrité du tutoriel
+- Débuter la personnalisation
+    - Choisir le type de niveaux ou de monde ouvert à implémenter
+    - Explorer le fonctionnement de la scène du setting actuelle
+    - Créer des nouvelles scènes de la map
+    - Créer la matrice aléatoire
+    - Instancier les différentes scènes de la map
+    - Décharger les scènes distantes
+    - Détruire les objets distants
+
 
 
 
@@ -175,3 +182,50 @@ Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation 
 
 ---
 ### Les objectifs de la semaine suivante
+
+
+
+
+
+
+
+
+
+# SEMAINE 3
+
+
+
+---
+## Felicya
+
+### Du 2025-11-17 au 2025-11-23
+
+---
+### Tâches réalisées
+- Choisir le tutoriel et le projet de base sur lesquels nous allons extrapoler
+- Trouver comment transmettre le projet via Git
+
+- Création du plan du layout et de la map du jeu
+- Création des scènes des plateformes et ponts à réutiliser
+- Travail sur la logique à intégrer
+
+*** VOIR LE FICHIER `Felicya/Procédure création layout.md` ***
+---
+### Apprentissages faits avec l’aide de l’IA
+- Contenu du .gitignore normalement recommandé par Godot
+[https://chatgpt.com/share/691b36ae-8288-800a-9fb6-2297499ee976](https://chatgpt.com/share/691b36ae-8288-800a-9fb6-2297499ee976)
+
+- Résumé du tutoriel de création du jeu de base (voir Felicya/Résumé tutoriel.md)
+- Détermination des premières étapes à effectuer (scènes pour plateformes réutilisables)
+- Construction de la logique de génération aléatoire du terrain
+- Ajustements à faire à la logique de génération
+- Ajustements à faire pour récupérer les coordonnées du joueur dans `game.md`et comment activer la mise à jour du layout
+---
+### Les difficultés rencontrées
+- Manque d'inspiration en début de semaine
+- Manque de motivation vu la difficulté à collaborer avec l'IA
+- Plus j'avance dans le travail, plus l'IA a du mal à comprendre mes requêtes étant donné qu'elles sont de plus en plus pointues; l'IA fait de plus en plus d'erreurs.
+---
+### Les objectifs de la semaine suivante
+* Rendre l'apparition et la destruction de plateformes plus fluides et éliminer les bugs
+* Réutiliser la même logique pour le début de la génération des monstres, la fin de leur génération et leur disparition

@@ -68,5 +68,6 @@ script = ExtResource("3_es74b")
 plateforme_scene = ExtResource("3_et47f")
 pont_scene = ExtResource("4_xe0c4")
 plateforme_debut_scene = ExtResource("5_xe0c4")
+MAX_DISTANCE_FROM_START = null
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
