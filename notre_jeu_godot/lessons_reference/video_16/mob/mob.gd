@@ -2,8 +2,8 @@ extends RigidBody3D
 
 signal died
 
-var speed = randf_range(2.0, 4.0)
-var health = 3
+var speed = randf_range(0.5, 1)
+var health = 1
 
 @onready var bat_model = %bat_model
 @onready var timer = %Timer

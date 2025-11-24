@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpqvmc7qt8xut"]
+[gd_scene load_steps=11 format=3 uid="uid://bpqvmc7qt8xut"]
 
 [ext_resource type="PackedScene" uid="uid://d3kp34dihjeyd" path="res://lessons_reference/video_16/player/player.tscn" id="1_fqdcw"]
-[ext_resource type="Script" uid="uid://bl4rvfo6g3wbf" path="res://lessons_reference/video_16/game.gd" id="1_xym6k"]
-[ext_resource type="Script" uid="uid://cfkdx26x47w31" path="res://lessons_reference/video_16/layout.gd" id="3_es74b"]
+[ext_resource type="Script" uid="uid://bymjg0vqj0cu7" path="res://lessons_reference/video_16/game.gd" id="1_xym6k"]
+[ext_resource type="Script" uid="uid://chmkbpnh6gcyc" path="res://lessons_reference/video_16/layout.gd" id="3_es74b"]
 [ext_resource type="PackedScene" uid="uid://7yllimqkvgau" path="res://lessons_reference/video_16/level/Plateforme.tscn" id="3_et47f"]
 [ext_resource type="PackedScene" uid="uid://uuud1dntlxkt" path="res://lessons_reference/video_16/level/Pont droit.tscn" id="4_xe0c4"]
 [ext_resource type="PackedScene" uid="uid://cnanrvx0le3m3" path="res://lessons_reference/video_16/level/PlateformeDebut.tscn" id="5_xe0c4"]
+[ext_resource type="PackedScene" uid="uid://xtl5acmpaa04" path="res://lessons_reference/video_16/mob/spawner_3d.tscn" id="7_vsr84"]
+[ext_resource type="PackedScene" uid="uid://dfwbq2vombjvr" path="res://lessons_reference/video_16/mob/mob.tscn" id="8_3wpyi"]
 
 [sub_resource type="Environment" id="Environment_pev5d"]
 background_mode = 1
@@ -68,5 +70,8 @@ script = ExtResource("3_es74b")
 plateforme_scene = ExtResource("3_et47f")
 pont_scene = ExtResource("4_xe0c4")
 plateforme_debut_scene = ExtResource("5_xe0c4")
+
+[node name="MobSpawner3D" parent="." instance=ExtResource("7_vsr84")]
+mob_to_spawn = ExtResource("8_3wpyi")
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
