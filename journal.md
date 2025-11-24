@@ -194,6 +194,43 @@ J'ai de la difficulté à obtenir le bon résultat de mes recherches IA. Lorsque
 
 
 # SEMAINE 3
+
+## Jérémie
+
+### 2025-11-23
+
+---
+### Tâches réalisées
+
+J'ai intégré les chauvres-souris dans les 'spawner'
+J'ai augmenté la taille des chauvres-souris ainsi que leur hitbox
+J'ai modifié leur couleur pour vert/rouge (thématique noel ahah)
+J'ai identifié où était toute les instance de spawner (caché dans 	temporary_level.tscn)
+J'ai limité les spawner à 1 chauvre-souris max
+J'ai réduit la vitesse des chauvres-souris
+J'ai réduit les points de vie à 1 (donc une seule balle pour les tuer)
+
+
+---
+### Apprentissages faits avec l’aide de l’IA
+
+Chat GPT ma guidé tout le long : J'ai envoyé le projet en ZIP à GPT pour qu'il analyse la structure du projet. Ensuite, lorsque je cherchais des objets, des scripts ou des fonctionnalités spécifiques, je prenais des captures d’écran du code ou de l’éditeur et je les envoyais à ChatGPT. Il pouvait ensuite localisé la fonctionnalité et m'expliquer son rôle etc ...
+
+---
+### Les difficultés rencontrées
+
+La structure en générale, trouver les fonctionnalités, les objets, les scènes, les settings, les options .. etc
+
+---
+### Les objectifs de la semaine suivante
+
+Modifier séparément les instances de chauvres-souris (au lieu de toute les modifier ensemble)
+
+Peut-être faire une chauvres-souris élite (un genre de boss)
+
+
+
+
 ---
 ## Felicya
 
