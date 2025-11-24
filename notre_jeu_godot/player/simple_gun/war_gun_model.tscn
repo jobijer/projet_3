@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://5t61dkoi507k"]
+
+[ext_resource type="PackedScene" uid="uid://b5sshael0cq73" path="res://player/simple_gun/war_gun_model.glb" id="1_3es7l"]
+
+[node name="simple_gun" instance=ExtResource("1_3es7l")]
+
+[node name="gun_model_red" parent="." index="0"]
+transform = Transform3D(-3.208416e-08, 0, -0.703, 0, 1, 0, 0.734, 0, -3.0729105e-08, 0, -0.299, -0.147)
+cast_shadow = 0

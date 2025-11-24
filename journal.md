@@ -177,8 +177,12 @@ Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation 
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
+Les guides ont tous été fait avec de l'IA. Je lui ai communiqué les paramètres importants qui concernent le projet, et lui ai demandé de générer un guide. Le guide présenté est celui qui a été généré après plusieurs questions et correctins de l'IA.
+
 ---
 ### Les difficultés rencontrées
+
+J'ai de la difficulté à obtenir le bon résultat de mes recherches IA. Lorsque je demandait à ChatGPT de me générer une réponse en markdown, seulement la première partie de la réponse était bien formattée, et Chatgpt me jurait que tout la réponse était en markdown, quand elle ne l'était clairement pas. C'était une expérience frustrante, mais un bon rappel que tous les IA ne sont pas égaux, surtout si elles sont gratuites.
 
 ---
 ### Les objectifs de la semaine suivante
@@ -189,12 +193,7 @@ Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation 
 
 
 
-
-
 # SEMAINE 3
-
-
-
 ---
 ## Felicya
 
@@ -229,3 +228,35 @@ Cette semaine, j'ai généré des guides pour les physiques du jeu, l'animation 
 ### Les objectifs de la semaine suivante
 * Rendre l'apparition et la destruction de plateformes plus fluides et éliminer les bugs
 * Réutiliser la même logique pour le début de la génération des monstres, la fin de leur génération et leur disparition
+Intégrer les apprentissages dans un jeu à développer nous-mêmes en guise de démonstration.
+
+---
+## Jasmin
+
+### 2025-11-10
+
+Cette semaine, en classe, on a été trouvé un exemple de code simple pour un FPS dans Godot. Notre but cette semaine est de joueur avec les plus de paramètres possible pour optimmiser notre jeu. Mes tâches sont de :
+1. Trouver comment remplacer le gun_model.glb par la version gun_model_2.glb que j'ai modifié avec Blender
+2. Modifier les paramètres de tir pour que le nouveau modèle d'arme aie son comportement propre à lui (Les projectiles sont plus gros, font plus de dégat, l'arme tire plus lentement, etc)
+3. Trouver un moyen de permettre les deux versions de l'arme dans le jeu. Par exemple, l'arme du joueur pourrait automatiquement s'améliorer lorsque le score atteinds 10 points
+4. Appliquer les connaissances acquises dans la manipulation des armes pour créer une version alternée des enemis
+5. Si possible, coder de nouveau comportement pour les enemis aussi
+---
+### Tâches réalisées
+
+##### Update 1
+J'avais importé et modifié un fichier sur blender, et avait beaucoup de difficulté à bien l'importer dans Godot. Je me suis rendu compte que je n'en savais pas asser pour même comprendre ou était mon erreur, et j'ai
+décidé de prendre du temps pour me familiariser avec Blender d'abord. J'ai changé d'IA et j'ai demandé à Gemini cette fois-ci de m'aider dans ma recherche. L'analyse elle-même était très comparable à mon expérience
+avec ChatGPT, mais en plus l'IA m'a donné un lien sur une bonne vidéo Youtube sur le sujet. Je suis reparti de tout début avec mon fichier, et au final je suis arrivé avec war_gun_model.glb, qui est mieux fait que le premier. Il me reste à revérifier si j'ai bien exporté le fichier, mais je me sens maintenant en meilleure position pour trouver le problème.
+---
+### Apprentissages faits avec l’aide de l’IA
+
+- J'ai commencé à demander à Chatgpt des questions sur les modèles d'arme contenu dans le jeu. Chatgpt m'a indiqué quels fichiers seraient compatible avec Blender, et m'a expliqué comment les réimporter pour Godot. Chatgpt m'a aussi expliqué somairement comment Godot gérer ces modèles. Godot utilise bel et bien des fichiers glb, mais avant de pouvoir être utilisé, ces fichiers sont manipulé dans des versions .glb.import qui contiennent toutes les données importantes pour Godot.
+
+Au moment de ce commit, c'est ou je suis rendu. J'ai mon gun_model_2.glb, et j'essaye de remplacer le modèle précédent avec.
+---
+### Les difficultés rencontrées
+
+
+---
+### Les objectifs de la semaine suivante

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cgq6vqc6ja5gy" path="res://lessons_reference/video_16/player/player.gd" id="1_g3eiy"]
 [ext_resource type="PackedScene" uid="uid://b6nrg32r2wq86" path="res://lessons_reference/video_16/player/simple_gun/blue_gun.tscn" id="3_43sda"]
 [ext_resource type="Texture2D" uid="uid://ct7de2yr7pgwt" path="res://player/reticle.png" id="3_r7as2"]
-[ext_resource type="PackedScene" uid="uid://b5sshael0cq73" path="res://player/simple_gun/war_gun_model.glb" id="3_y8jjm"]
+[ext_resource type="PackedScene" uid="uid://b5sshael0cq73" path="res://player/simple_gun/war_gun_model_2.glb" id="3_y8jjm"]
 [ext_resource type="AudioStream" uid="uid://juy2kux2xdd" path="res://player/gun_shoot.wav" id="4_0d82q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ctapl"]
@@ -24,15 +24,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="gun_model" parent="Camera3D" instance=ExtResource("3_43sda")]
 unique_name_in_owner = true
-transform = Transform3D(-0.29984042, -0.018908603, 0.011693819, -0.006238715, 0.2233502, 0.20118372, -0.021339072, 0.20039041, -0.22313097, 0.362667, -0.130673, -0.446608)
+transform = Transform3D(-0.30008897, -0.010392497, 0.015399973, -0.008154301, 0.29761302, 0.04194229, -0.016693367, 0.041444503, -0.297326, 0.362667, -0.130673, -0.446608)
 
 [node name="Marker3D" type="Marker3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(0.42952, 0, 0, 0, 0.42952, 0, 0, 0, 0.42952, 0.364214, -0.0933893, -0.624222)
 gizmo_extents = 0.37
 
-[node name="war_gun_model" parent="Camera3D" instance=ExtResource("3_y8jjm")]
-transform = Transform3D(-0.30040908, -0.010584456, 0.015599841, -0.008322623, 0.2979545, 0.0418911, -0.016915075, 0.04137753, -0.29766217, 0.363, -0.13099998, -0.447)
+[node name="war_gun_model_2" parent="Camera3D" instance=ExtResource("3_y8jjm")]
+transform = Transform3D(-0.30040908, -0.010584456, 0.015599841, -0.008322622, 0.29795447, 0.041891105, -0.016915075, 0.04137753, -0.2976622, 0.363, -0.131, -0.447)
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
