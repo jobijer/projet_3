@@ -270,7 +270,7 @@ Intégrer les apprentissages dans un jeu à développer nous-mêmes en guise de 
 ---
 ## Jasmin
 
-### 2025-11-10
+### Du 2025-11-17 au 2025-11-23
 
 Cette semaine, en classe, on a été trouvé un exemple de code simple pour un FPS dans Godot. Notre but cette semaine est de joueur avec les plus de paramètres possible pour optimmiser notre jeu. Mes tâches sont de :
 1. Trouver comment remplacer le gun_model.glb par la version gun_model_2.glb que j'ai modifié avec Blender
@@ -285,15 +285,26 @@ Cette semaine, en classe, on a été trouvé un exemple de code simple pour un F
 J'avais importé et modifié un fichier sur blender, et avait beaucoup de difficulté à bien l'importer dans Godot. Je me suis rendu compte que je n'en savais pas asser pour même comprendre ou était mon erreur, et j'ai
 décidé de prendre du temps pour me familiariser avec Blender d'abord. J'ai changé d'IA et j'ai demandé à Gemini cette fois-ci de m'aider dans ma recherche. L'analyse elle-même était très comparable à mon expérience
 avec ChatGPT, mais en plus l'IA m'a donné un lien sur une bonne vidéo Youtube sur le sujet. Je suis reparti de tout début avec mon fichier, et au final je suis arrivé avec war_gun_model.glb, qui est mieux fait que le premier. Il me reste à revérifier si j'ai bien exporté le fichier, mais je me sens maintenant en meilleure position pour trouver le problème.
+
+##### Update 2
+Update deux un peu en retard, mais j'ai finalement réussi à faire que le modèle chanque lorsque le score atteint un certain niveau. Une fois le modèle bien exporté de blender et mis a la bonne place dans Godot, j'ai réussi à implémenter la fonctionalité, mais le lendemain même, le 23 Novembre, la modification des mobs a fait que le score ne change plus, et ma fonctionalité est donc devenu invalide. Je sais qu'elle marche du moins, mais c'est un peu décevant. Au moins, l'avancement des mobs m'a permis de voir qu'on peut changer les couleurs des objects directement dans Godot, sans devoir passer par Blender. Ça m'aurais sauvé du temps tout de même.
 ---
 ### Apprentissages faits avec l’aide de l’IA
 
 - J'ai commencé à demander à Chatgpt des questions sur les modèles d'arme contenu dans le jeu. Chatgpt m'a indiqué quels fichiers seraient compatible avec Blender, et m'a expliqué comment les réimporter pour Godot. Chatgpt m'a aussi expliqué somairement comment Godot gérer ces modèles. Godot utilise bel et bien des fichiers glb, mais avant de pouvoir être utilisé, ces fichiers sont manipulé dans des versions .glb.import qui contiennent toutes les données importantes pour Godot.
 
-Au moment de ce commit, c'est ou je suis rendu. J'ai mon gun_model_2.glb, et j'essaye de remplacer le modèle précédent avec.
+- Gemini m'a donné du code concret pour être capable d'implémenter ma fonctionalité. Au final je crois que c'est difficle de bien communiquer le contexte à Gemini. Je n'ai pas une asser bonne compréhension des logiciels que j'utilise pour donner à mon IA asser de contexte pour créer du code optimal, mais ça fonctionne. En ce moment, le joeur a toujours les deux modèles en mémoire, on fait simplement changer alterner la visibilité des modèles quand on le souhaite.
 ---
 ### Les difficultés rencontrées
+Les principales difficultés que j'ai rencontré cette semaine est avec Blender. Au départ, je souhaitai qu'ajouter trois cones sur le modèle pour que le changement soit plus visible, mais c'était beaucoup plus compliqué que prévu de manipuler l'objet dans Blender. Après quelques heures, je me suis rendu compte que les objets que j'avais rajouté ne fesait techniquement pas partie de l'ensemble de l'objet, du moins pas au même titre que le modèle initial. La première étape était donc de fusionner mes trois cônes et le modèle initial pour créer un seul modèle. J'ai réussi, mais ça l'a enlevé tous les autres paramètres.
 
+Après avoir fusionné le modèle, j'ai du attitrer un matériel au nouveau modèle amélioré. Sans matériel, le modèle ne reste qu'un mesh sur lequel rien ne s'affiche. J'ai mis un matériel très simple, je n'ai pas trop joué avec les paramètres et j'ai continué.
+
+Après le matériel, j'ai du créer ce que Blender appelle une fiche de UV editing. En fesant bien attention de sélectionner l'object au complet, Blender crée un fichier qui représente l'object applatis. Je n'ai pas asser bien compris pour l'expliquer en détail (malgré l'insistance de Gemini), mais pour faire de mon mieux, c'est comme si on avait découpé l'object entre toutes les formes géométriques qui le compose, et qu'on les avait étalé le plus optimalement possible. Lorsque je met des couleurs sur cette fiche, la couleur se transpose automatiquement sur la partie du modèle qu'elle représente.
+
+Après, je devais faire quelques manipulation pour que Blender recaclule les nouvelles limites de l'object. L'object est enfin prêt pour Godot
 
 ---
 ### Les objectifs de la semaine suivante
+
+Maintenant que je le modèle se comporte bien, j'aimerais bien que le nouveau gun fonctionne différament du premier : les balles vont plus vite, vont plus loins, font plus de dégats, sont d'une couleur différentes, ou une combinaison de ces idées
