@@ -10,13 +10,20 @@ signal mob_spawned(mob)
 var current_mob: Node3D = null   # ← on garde une référence sur la bat actuelle
 
 func _on_timer_timeout() -> void:
-	# S'il y a déjà une bat encore vivante, on ne respawn pas
+	# Vérifie la distance joueur → spawner
+	var player = get_node_or_null("/root/Game/Player")  # adapte selon ton chemin
+	if player != null:
+		var distance_to_player = global_position.distance_to(player.global_position)
+		if distance_to_player > 30.0:
+			# trop loin → ne pas spawn
+			return
+
+	# S'il y a déjà un mob vivant, ne pas respawn
 	if is_instance_valid(current_mob):
 		return
 
 	var new_mob = mob_to_spawn.instantiate()
 	current_mob = new_mob
-
 	add_child(new_mob)
 	new_mob.global_position = marker_3d.global_position
 	mob_spawned.emit(new_mob)

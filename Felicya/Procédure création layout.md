@@ -78,3 +78,40 @@ Pour pouvoir faire apparaitre des plateformes en avançant et faire disparaitre 
 * Modifier la logique en ajoutant un nombre limite de plateformes à faire apparaitre à droite et à gauche
 * Ajouter une fonction qui fait apparaitre et disparaitre les plateformes
 * Mettre à jour le fichier `game.gd` pour qu'il récupère les coordonnées du joueur, les compare à son ancien centre et, si il s'en est suffisament éloigné, changer le centre et déclencher la mise à jour.
+
+
+## 4. Faire disparaitre les monstres distants
+* Dans `game.md`, déterminer la distance entre le joueur et chaque monstre avec la fonction
+```gdscript
+player_pos.distance_to(mob.global_position)
+```
+* Si le monstre se trouve à plus de 50 mètres, utiliser la fonction `queue_free()` pour détruire le mob.
+
+## 5. Activer seulement les spawners les plus proches
+* Dans `spawner_3d.md`, déterminer la distance entre le joueur et chaque spawner avec la même fonction que précédement, mais sur le spawner :
+```gdscript
+global_position.distance_to(player.global_position)
+```
+* Si le spawner se trouve à plus de 30 mètres, on interrompt l'exécution de la fonction :
+<pre>
+<code class="gdscript">
+func _on_timer_timeout() -> void:
+    # Vérifie la distance joueur → spawner
+    var player = get_node_or_null("/root/Game/Player")
+    if player != null:
+		var distance_to_player = global_position.distance_to(player.global_position)
+    <span style="color:red">if distance_to_player > 30.0:
+			<span style="color:green"># trop loin → ne pas spawn</span>
+			return</span>
+
+    # S'il y a déjà un mob vivant, ne pas respawn
+    if is_instance_valid(current_mob):
+        return
+
+    var new_mob = mob_to_spawn.instantiate()
+    current_mob = new_mob
+    add_child(new_mob)
+    new_mob.global_position = marker_3d.global_position
+    mob_spawned.emit(new_mob)
+</code>
+</pre>

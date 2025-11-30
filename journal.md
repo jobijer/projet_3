@@ -308,3 +308,29 @@ Après, je devais faire quelques manipulation pour que Blender recaclule les nou
 ### Les objectifs de la semaine suivante
 
 Maintenant que je le modèle se comporte bien, j'aimerais bien que le nouveau gun fonctionne différament du premier : les balles vont plus vite, vont plus loins, font plus de dégats, sont d'une couleur différentes, ou une combinaison de ces idées
+
+
+# SEMAINE 4
+---
+## Felicya
+
+### Du 2025-11-24 au 2025-11-30
+
+---
+### Tâches réalisées
+- Gestion de la distance des mobs et des spawners
+- Amélioration du fichier de procédure de mon travail
+
+*** VOIR LE FICHIER `Felicya/Procédure création layout.md` ***
+---
+### Apprentissages faits avec l’aide de l’IA
+- Les fonctions à modifier pour gérer les distances
+- Les fonctions à utiliser
+---
+### Les difficultés rencontrées
+- Fin des tâches planifiées -> manque d'inspiration sur quoi faire ensuite
+- Manque de temps vu les évaluations dans d'autres cours
+- Préparation à un examen médical qui m'a davantage affecté que prévu.
+---
+### Les objectifs de la semaine suivante
+* Voir ce que je peux faire pour élaborer mon travail encore (j'ai déjà touché à beaucoup de fonctions, fichiers et contenu)
