@@ -21,12 +21,12 @@ func _physics_process(delta):
 	bat_model.rotation.y = Vector3.FORWARD.signed_angle_to(direction, Vector3.UP) + PI
 
 
-func take_damage():
+func take_damage(damage):
 	if health <= 0:
 		return
 
 	bat_model.hurt()
-	health -= 1
+	health -= damage
 	hurt_sound.pitch_scale = randfn(1.0, 0.1)
 	hurt_sound.play()
 

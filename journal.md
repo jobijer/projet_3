@@ -334,3 +334,32 @@ Maintenant que je le modèle se comporte bien, j'aimerais bien que le nouveau gu
 ---
 ### Les objectifs de la semaine suivante
 * Voir ce que je peux faire pour élaborer mon travail encore (j'ai déjà touché à beaucoup de fonctions, fichiers et contenu)
+
+
+## Jasmin
+
+### Du 2025-11-24 au 2025-11-30
+
+---
+### Tâches réalisées
+- Changement du comportement du nouveau gun
+
+---
+### Apprentissages faits avec l’aide de l’IA
+1. Le fonctionnnement précis de la fonction shoot_bullets et de comment elle interagis avec les autres dossier
+2. Arborescence de Godot pour les modèles et les meshs
+J'ai une meilleure compréhension de la relations entre les fichiers, mais c'est encore mélangeant. Pour l'instant, je sais ou aller pour changer la vitesse, le dégat, la distance maximale et la fréquence des balles, mais je ne suis pas capable de changer sa couleur. Je n'ai pas eu le temps cette semaine de trouver le problème exactement, mais je crois que c'est la relation entre "bullet_3d_better.gd" et "bullet_3d_better.tscn" qui m'échappe.
+---
+### Les difficultés rencontrées
+1. Manque de temps vu les évaluations dans d'autres cours
+
+2. Arborescence du jeu est frustrante et crash
+Les fichiers sont séparés entre deux dossier complètement différent, video_7 et video_16, qui contiennent des fichiers dupliqués. J'ai du effacer tout les changements a mes fichiers plusieurs fois parce qu'un changement à n'importe lequel de ces arborescences peut faire planter le jeu d'une manière que je ne suis pas capable de retracer. Notre jeu semle être basé sur video_16, mais changer des fichiers d'endroit dans video_7 peuvent faire crasher le jeu et je ne peut expliquer pourquoi. Je trouve ça frustrant parce que j'ai l'impression de faire du code qui pourrait être facilement optimisé, mais je me concentre sur les résultats.
+
+J'ai réussi à modifier tout les comportements que je voulait sauf la couleur. Aussi, je n'ai pas plus tester ma fonctionalité dans à son plein potentiel parce qu'en date du 30 Novembre, les mobs ne sont pas encore débuggé. Heureusement, j'ai une bonne compréhension du code et je sais que je pourrait le faire rapidement lorsque Jérémi aura push le fix.
+
+---
+### Les objectifs de la semaine suivante
+1. Changer la couleur de "bullet_3d_better.gd"
+2. Après le fix, implémenter le changement de comportement lorsque que le modèle change
+3. Sans toucher à Blender, trouver le moyen de modifier le modèle directement dans Godot pour pouvoir rapidement créer un troisième modèle qui aura aussi son propre comportement

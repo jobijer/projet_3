@@ -1,7 +1,7 @@
 extends Area3D
 
-const SPEED = 55.0
-const RANGE = 40.0
+const SPEED = 70.0
+const RANGE = 55.0
 
 var travelled_distance = 0.0
 
@@ -16,4 +16,4 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	queue_free()
 	if body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(1)

@@ -29,8 +29,6 @@ func _ready():
 	print("Position joueur :", player_node.global_position)
 	print("Case joueur :", get_player_grid_position())
 
-
-
 func _process(delta):
 	# Arrêter si les nœuds critiques ne sont pas initialisés
 	if not is_instance_valid(level_generator) or not is_instance_valid(player_node):

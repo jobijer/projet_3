@@ -10,6 +10,7 @@ const SWITCH_SCORE_THRESHOLD: int = 10
 var current_gun: Node3D = null
 var has_switched: bool = false # NEW: Prevents switching repeatedly
 var game_manager = null
+var better_gun = false
 
 func _ready():
 	var camera = %Camera3D
@@ -64,8 +65,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	if Input.is_action_pressed("shoot") and %Timer.is_stopped():
-		shoot_bullet()
+	if Input.is_action_pressed("shoot") and %Timer.is_stopped() and not better_gun:
+		shoot_better_bullet()
+	if Input.is_action_pressed("shoot") and %Timer.is_stopped() and better_gun:
+		shoot_better_bullet()
 
 func shoot_bullet():
 	const BULLET_3D = preload("bullet_3d.tscn")
@@ -77,6 +80,16 @@ func shoot_bullet():
 	%Timer.start()
 	%AudioStreamPlayer.play()
 
+func shoot_better_bullet():
+	const BULLET_3D = preload("bullet_3d_better.tscn")
+	var new_bullet = BULLET_3D.instantiate()
+	%Marker3D.add_child(new_bullet)
+
+	new_bullet.global_transform = %Marker3D.global_transform
+
+	%Timer.start()
+	%AudioStreamPlayer.play()
+	
 #---Main Logic ---
 
 func _process(delta):
@@ -95,7 +108,10 @@ func _set_active_weapon(target_gun: Node3D):
 		gun_model.visible = false
 	if war_gun_model != null:
 		war_gun_model.visible = false
-		
+	
+	better_gun = true
+	%Timer.wait_time = 0.06
+	
 	if target_gun != null:
 		target_gun.visible = true
 		current_gun = target_gun
