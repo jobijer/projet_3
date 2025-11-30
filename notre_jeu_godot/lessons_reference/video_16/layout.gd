@@ -1,3 +1,4 @@
+#layout.gd
 extends Node3D
 
 @export var plateforme_scene: PackedScene
@@ -143,7 +144,7 @@ func update_layout(new_center_pos: Vector2i, max_attempts: int = 15):
 		for pos in candidates:
 			try_place_segment(pos)
 			
-			if randf() < 0.05:
+			if randf() < 0.2:
 				try_place_closing_bridge()
 
 func cleanup_old_tiles():

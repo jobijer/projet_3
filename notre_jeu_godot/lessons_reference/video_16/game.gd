@@ -1,3 +1,4 @@
+#game.gd
 extends Node3D
 
 var player_score = 0
@@ -7,6 +8,11 @@ var player_score = 0
 @onready var level_generator := %Layout 
 @onready var player_node = $"Player"
 var current_grid_center = Vector2i(0, 0)
+
+# --- Despawn settings ---
+const DESPAWN_DISTANCE := 50.0         # distance en mètres
+const DESPAWN_CHECK_INTERVAL := 1    # vérification toutes les 0.5 secondes
+var _despawn_timer := 0.0
 
 func get_player_grid_position() -> Vector2i:
 	# Vérification de robustesse
@@ -46,6 +52,11 @@ func _process(delta):
 	if needs_update:
 		# Appel la fonction de mise à jour du layout avec la nouvelle position centrale
 		level_generator.update_layout(current_grid_center)
+	# --- Despawn check ---
+	_despawn_timer += delta
+	if _despawn_timer >= DESPAWN_CHECK_INTERVAL:
+		_despawn_timer = 0.0
+		_check_and_despawn_far_mobs()
 
 
 func increase_score():
@@ -59,11 +70,27 @@ func _on_kill_plane_body_entered(body):
 
 
 func _on_mob_spawner_3d_mob_spawned(mob):
+	mob.add_to_group("mobs")
+	
 	mob.died.connect(func():
 		increase_score()
 		do_poof(mob.global_position)
 	)
 	do_poof(mob.global_position)
+	
+func _check_and_despawn_far_mobs():
+	if not is_instance_valid(player_node):
+		return
+
+	var player_pos = player_node.global_position
+
+	for mob in get_tree().get_nodes_in_group("mobs"):
+		if not is_instance_valid(mob):
+			continue
+
+		var dist = player_pos.distance_to(mob.global_position)
+		if dist > DESPAWN_DISTANCE:
+			mob.queue_free()
 
 
 func do_poof(mob_position):
