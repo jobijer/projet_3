@@ -24,11 +24,6 @@ func get_player_grid_position() -> Vector2i:
 	var x = round(player_node.global_position.x / tile_size)
 	var z = round(player_node.global_position.z / tile_size)
 	return Vector2i(int(x), int(z))
-	
-func _ready():
-	print("Position joueur :", player_node.global_position)
-	print("Case joueur :", get_player_grid_position())
-
 
 
 func _process(delta):

@@ -112,6 +112,9 @@ func try_place_closing_bridge():
 func update_layout(new_center_pos: Vector2i, max_attempts: int = 15):
 	center_position = new_center_pos
 	
+	# 1. Nettoyage
+	cleanup_old_tiles()
+	
 	# 2. Génération
 	# Si c'est le tout début (peu de plateformes), on utilise la méthode brute pour remplir
 	if plateforme_positions.size() < 10:
@@ -125,8 +128,6 @@ func update_layout(new_center_pos: Vector2i, max_attempts: int = 15):
 				try_place_segment(current_platform_pos)
 
 	else:
-		# 1. Nettoyage
-		cleanup_old_tiles()
 		# LOGIQUE DE RANGÉE UNIQUE (Runtime)
 		var candidates = []
 		

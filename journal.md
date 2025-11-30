@@ -194,6 +194,43 @@ J'ai de la difficulté à obtenir le bon résultat de mes recherches IA. Lorsque
 
 
 # SEMAINE 3
+
+## Jérémie
+
+### 2025-11-23
+
+---
+### Tâches réalisées
+
+J'ai intégré les chauvres-souris dans les 'spawner'
+J'ai augmenté la taille des chauvres-souris ainsi que leur hitbox
+J'ai modifié leur couleur pour vert/rouge (thématique noel ahah)
+J'ai identifié où était toute les instance de spawner (caché dans 	temporary_level.tscn)
+J'ai limité les spawner à 1 chauvre-souris max
+J'ai réduit la vitesse des chauvres-souris
+J'ai réduit les points de vie à 1 (donc une seule balle pour les tuer)
+
+
+---
+### Apprentissages faits avec l’aide de l’IA
+
+Chat GPT ma guidé tout le long : J'ai envoyé le projet en ZIP à GPT pour qu'il analyse la structure du projet. Ensuite, lorsque je cherchais des objets, des scripts ou des fonctionnalités spécifiques, je prenais des captures d’écran du code ou de l’éditeur et je les envoyais à ChatGPT. Il pouvait ensuite localisé la fonctionnalité et m'expliquer son rôle etc ...
+
+---
+### Les difficultés rencontrées
+
+La structure en générale, trouver les fonctionnalités, les objets, les scènes, les settings, les options .. etc
+
+---
+### Les objectifs de la semaine suivante
+
+Modifier séparément les instances de chauvres-souris (au lieu de toute les modifier ensemble)
+
+Peut-être faire une chauvres-souris élite (un genre de boss)
+
+
+
+
 ---
 ## Felicya
 
@@ -260,3 +297,30 @@ Au moment de ce commit, c'est ou je suis rendu. J'ai mon gun_model_2.glb, et j'e
 
 ---
 ### Les objectifs de la semaine suivante
+
+
+
+# SEMAINE 4
+---
+## Felicya
+
+### Du 2025-11-24 au 2025-11-30
+
+---
+### Tâches réalisées
+- Gestion de la distance des mobs et des spawners
+- Amélioration du fichier de procédure de mon travail
+
+*** VOIR LE FICHIER `Felicya/Procédure création layout.md` ***
+---
+### Apprentissages faits avec l’aide de l’IA
+- Les fonctions à modifier pour gérer les distances
+- Les fonctions à utiliser
+---
+### Les difficultés rencontrées
+- Fin des tâches planifiées -> manque d'inspiration sur quoi faire ensuite
+- Manque de temps vu les évaluations dans d'autres cours
+- Préparation à un examen médical qui m'a davantage affecté que prévu.
+---
+### Les objectifs de la semaine suivante
+* Voir ce que je peux faire pour élaborer mon travail encore (j'ai déjà touché à beaucoup de fonctions, fichiers et contenu)
