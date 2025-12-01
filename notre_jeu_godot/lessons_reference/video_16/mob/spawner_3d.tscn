@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://xtl5acmpaa04"]
+[gd_scene load_steps=5 format=3 uid="uid://xtl5acmpaa04"]
 
-[ext_resource type="Script" uid="uid://bpgxeyw3xlpvn" path="res://lessons_reference/video_16/mob/spawner_3d.gd" id="1_5kn8d"]
+[ext_resource type="Script" uid="uid://cw8btkvhhqkae" path="res://lessons_reference/video_16/mob/spawner_3d.gd" id="1_5kn8d"]
+[ext_resource type="PackedScene" uid="uid://dfwbq2vombjvr" path="res://lessons_reference/video_16/mob/mob.tscn" id="2_pwd6f"]
 [ext_resource type="PackedScene" uid="uid://c2oal6rrmeo67" path="res://lessons_reference/video_16/mob/spawner/spawner_skin.tscn" id="2_vlo78"]
+[ext_resource type="PackedScene" uid="uid://ctf6daq60e57d" path="res://lessons_reference/video_16/mob/big_bat.tscn" id="3_10wbc"]
 
 [node name="MobSpawner3D" type="Node3D"]
 script = ExtResource("1_5kn8d")
+mob_normal = ExtResource("2_pwd6f")
+mob_big = ExtResource("3_10wbc")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

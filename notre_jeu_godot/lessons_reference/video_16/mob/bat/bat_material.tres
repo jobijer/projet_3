@@ -1,12 +1,13 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c28yvvp6nnmq4"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c28yvvp6nnmq4"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sf8do"]
-load_path = "res://.godot/imported/bat_model_bat_palette.png-7ad9c3c193e1d543015fac56e3d622e5.s3tc.ctex"
+[ext_resource type="Texture2D" uid="uid://364vjcrpvpqg" path="res://mob/bat/bat_model_bat_palette.png" id="1_tm43x"]
+[ext_resource type="Material" uid="uid://8j8voq1ivtqu" path="res://lessons_reference/video_16/mob/bat/bat_material2.tres" id="2_ta5se"]
 
 [resource]
 resource_local_to_scene = true
 resource_name = "bat_mat"
+next_pass = ExtResource("2_ta5se")
 cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_sf8do")
+albedo_texture = ExtResource("1_tm43x")
 roughness = 0.427273
 emission_energy_multiplier = 2.65

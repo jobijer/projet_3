@@ -193,23 +193,23 @@ nodes/OneShot/node = SubResource("AnimationNodeOneShot_18omk")
 nodes/OneShot/position = Vector2(144, 72)
 node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Idle", &"OneShot", 1, &"Hurt"]
 
-[node name="bat_model" instance=ExtResource("1_tpnu0")]
+[node name="big_bat_model" instance=ExtResource("1_tpnu0")]
 script = ExtResource("1_ppjak")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(0, -0.0236, 0)
-bones/1/rotation = Quaternion(-0.045477767, 0.19341649, -0.6482774, 0.73502254)
-bones/2/rotation = Quaternion(-0.18486056, -0.052082334, 0.26597062, 0.94465536)
-bones/3/rotation = Quaternion(-0.1547729, 0.013578376, 0.21384804, 0.96443254)
-bones/4/rotation = Quaternion(-0.045477767, -0.19341649, 0.6482774, 0.73502254)
-bones/5/rotation = Quaternion(-0.18486056, 0.052082334, -0.26597062, 0.94465536)
-bones/6/rotation = Quaternion(-0.1547729, -0.013578376, -0.21384804, 0.96443254)
+bones/0/position = Vector3(0, -0.010429671, 0)
+bones/1/rotation = Quaternion(0.09480136, 0.07101745, -0.6064335, 0.78626186)
+bones/2/rotation = Quaternion(-0.07686768, -0.028774677, 0.35329896, 0.9319031)
+bones/3/rotation = Quaternion(-0.17782134, 0.00041789902, 0.261413, 0.94870585)
+bones/4/rotation = Quaternion(0.09480136, -0.07101745, 0.6064335, 0.78626186)
+bones/5/rotation = Quaternion(-0.07686768, 0.028774677, -0.35329896, 0.9319031)
+bones/6/rotation = Quaternion(-0.17782134, -0.00041789902, -0.261413, 0.94870585)
 bones/7/position = Vector3(0.130992, -0.227392, -0.087851495)
 bones/7/rotation = Quaternion(0.26196814, 0.08345515, 0.26575115, 0.92400455)
-bones/8/rotation = Quaternion(3.565077e-08, 0.6090526, 0.7931298, 2.1600224e-08)
+bones/8/rotation = Quaternion(2.8426298e-08, 0.542441, 0.840094, 2.0217602e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.087851495)
 bones/10/rotation = Quaternion(0.26196814, -0.08345515, -0.26575115, 0.92400455)
-bones/11/rotation = Quaternion(3.4760056e-08, 0.6090526, 0.7931298, 4.46342e-08)
+bones/11/rotation = Quaternion(2.52265e-08, 0.542441, 0.840094, 4.39632e-08)
 
 [node name="bat" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_uqgpt")
