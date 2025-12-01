@@ -11,6 +11,9 @@ var current_gun: Node3D = null
 var has_switched: bool = false # NEW: Prevents switching repeatedly
 var game_manager = null
 var better_gun = false
+var recoil_accumulator: Vector3 = Vector3.ZERO
+const RECOIL_DECAY: float = 2.0 # How fast the recoil wears off (higher = faster)
+const GRAVITY = 9.8 * 2.0 # Example gravity value
 
 func _ready():
 	var camera = %Camera3D
@@ -42,7 +45,6 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-
 func _physics_process(delta):
 	const SPEED = 5.5
 
@@ -57,6 +59,12 @@ func _physics_process(delta):
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
 
+# 1. Update/Decay the recoil force
+	if recoil_accumulator.length_squared() > 0.01:
+		# Interpolate the accumulator back to ZERO
+		recoil_accumulator = recoil_accumulator.lerp(Vector3.ZERO, delta * RECOIL_DECAY)
+		velocity += recoil_accumulator * delta * 50.0 # Apply the force
+
 	velocity.y -= 20.0 * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10.0
@@ -65,10 +73,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	if Input.is_action_pressed("shoot") and %Timer.is_stopped() and not better_gun:
-		shoot_better_bullet()
-	if Input.is_action_pressed("shoot") and %Timer.is_stopped() and better_gun:
-		shoot_better_bullet()
+	if Input.is_action_pressed("shoot") and %Timer.is_stopped():
+		if not has_switched:
+			shoot_bullet()
+		else:
+			shoot_better_bullet()
+
 
 func shoot_bullet():
 	const BULLET_3D = preload("bullet_3d.tscn")
@@ -83,10 +93,15 @@ func shoot_bullet():
 func shoot_better_bullet():
 	const BULLET_3D = preload("bullet_3d_better.tscn")
 	var new_bullet = BULLET_3D.instantiate()
+	
+	const Y_AXIS_DAMPENING: float = 0.35 # **New Constant: Adjust this value!**
+	var shooting_direction: Vector3 = %Marker3D.global_transform.basis.z
+	const RECOIL_IMPULSE: float = 3.3 # A small, strong push (adjust this!)%Marker3D.add_child(new_bullet)
 	%Marker3D.add_child(new_bullet)
-
 	new_bullet.global_transform = %Marker3D.global_transform
-
+	
+	recoil_accumulator += shooting_direction * RECOIL_IMPULSE
+	recoil_accumulator.y *= Y_AXIS_DAMPENING
 	%Timer.start()
 	%AudioStreamPlayer.play()
 	
@@ -96,9 +111,10 @@ func _process(delta):
 	# Check the global score every frame
 	if game_manager != null and not has_switched:
 		# Ensure game_manager (the node with game.gd) has the variable 'player_score'
-		if game_manager.player_score >= 3:
+		if game_manager.player_score >= SWITCH_SCORE_THRESHOLD:
 			# Perform the switch
 			_set_active_weapon(war_gun_model)
+			%Timer.wait_time = 0.06
 			has_switched = true
 
 # Function to handle visibility and update the current_gun variable
@@ -108,9 +124,6 @@ func _set_active_weapon(target_gun: Node3D):
 		gun_model.visible = false
 	if war_gun_model != null:
 		war_gun_model.visible = false
-	
-	better_gun = true
-	%Timer.wait_time = 0.06
 	
 	if target_gun != null:
 		target_gun.visible = true

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bpqvmc7qt8xut"]
 
 [ext_resource type="PackedScene" uid="uid://d3kp34dihjeyd" path="res://lessons_reference/video_16/player/player.tscn" id="1_fqdcw"]
-[ext_resource type="Script" uid="uid://bl4rvfo6g3wbf" path="res://lessons_reference/video_16/game.gd" id="1_xym6k"]
-[ext_resource type="Script" uid="uid://cfkdx26x47w31" path="res://lessons_reference/video_16/layout.gd" id="3_es74b"]
+[ext_resource type="Script" uid="uid://d1406w86h3hg6" path="res://lessons_reference/video_16/game.gd" id="1_xym6k"]
+[ext_resource type="Script" uid="uid://chmkbpnh6gcyc" path="res://lessons_reference/video_16/layout.gd" id="3_es74b"]
 [ext_resource type="PackedScene" uid="uid://7yllimqkvgau" path="res://lessons_reference/video_16/level/Plateforme.tscn" id="3_et47f"]
 [ext_resource type="PackedScene" uid="uid://uuud1dntlxkt" path="res://lessons_reference/video_16/level/Pont droit.tscn" id="4_xe0c4"]
 [ext_resource type="PackedScene" uid="uid://cnanrvx0le3m3" path="res://lessons_reference/video_16/level/PlateformeDebut.tscn" id="5_xe0c4"]

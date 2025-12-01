@@ -2,6 +2,8 @@ extends Node3D
 
 signal mob_spawned(mob)
 
+signal died
+
 @export var mob_normal: PackedScene
 @export var mob_big: PackedScene
 
@@ -13,6 +15,7 @@ var current_mob: Node3D = null   # on garde une référence sur la bat actuelle
 func _on_timer_timeout() -> void:
 	# Vérifie la distance joueur → spawner
 	var player = get_node_or_null("/root/Game/Player")
+	var game_manager = get_node_or_null("/root/Game")
 	if player != null:
 		var distance_to_player = global_position.distance_to(player.global_position)
 		if distance_to_player > 30.0:
@@ -33,5 +36,5 @@ func _on_timer_timeout() -> void:
 	current_mob = new_mob
 	add_child(new_mob)
 	new_mob.global_position = marker_3d.global_position
-
+	new_mob.died.connect(Callable(game_manager, "increase_score"))
 	mob_spawned.emit(new_mob)

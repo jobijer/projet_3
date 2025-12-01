@@ -20,7 +20,6 @@ func _physics_process(delta):
 	linear_velocity = direction * speed
 	bat_model.rotation.y = Vector3.FORWARD.signed_angle_to(direction, Vector3.UP) + PI
 
-
 func take_damage(damage):
 	if health <= 0:
 		return
@@ -32,7 +31,8 @@ func take_damage(damage):
 
 	if health == 0:
 		ko_sound.play()
-
+		emit_signal("died")
+		
 		set_physics_process(false)
 		gravity_scale = 1.0
 		var direction = player.global_position.direction_to(global_position)
@@ -43,5 +43,5 @@ func take_damage(damage):
 
 
 func _on_timer_timeout():
+	emit_signal("died")
 	queue_free()
-	died.emit()

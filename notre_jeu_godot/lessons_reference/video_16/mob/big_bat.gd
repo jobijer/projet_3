@@ -31,8 +31,10 @@ func take_damage(damage):
 	hurt_sound.play()
 
 	if health == 0:
+		print("dead")
 		ko_sound.play()
-
+		died.emit()
+		emit_signal("died")
 		set_physics_process(false)
 		gravity_scale = 1.0
 		var direction = player.global_position.direction_to(global_position)
@@ -43,5 +45,8 @@ func take_damage(damage):
 
 
 func _on_timer_timeout():
-	queue_free()
+	print("deado")
 	died.emit()
+	emit_signal("died")
+	queue_free()
+	

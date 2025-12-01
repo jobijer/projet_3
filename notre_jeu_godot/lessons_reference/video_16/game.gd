@@ -63,6 +63,7 @@ func _process(delta):
 
 
 func increase_score():
+	print("score")
 	player_score += 1
 	label.text = "Score: " + str(player_score)
 
@@ -73,12 +74,9 @@ func _on_kill_plane_body_entered(body):
 
 
 func _on_mob_spawner_3d_mob_spawned(mob):
+	#N'est pas connecté au mobs qui spawn en ce moment
 	mob.add_to_group("mobs")
-	
-	mob.died.connect(func():
-		increase_score()
-		do_poof(mob.global_position)
-	)
+	mob.died.connect(increase_score)
 	do_poof(mob.global_position)
 	
 func _check_and_despawn_far_mobs():
