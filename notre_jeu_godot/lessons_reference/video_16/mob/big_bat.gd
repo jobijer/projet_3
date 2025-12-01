@@ -31,7 +31,6 @@ func take_damage(damage):
 	hurt_sound.play()
 
 	if health == 0:
-		print("dead")
 		ko_sound.play()
 		died.emit()
 		emit_signal("died")
@@ -45,7 +44,6 @@ func take_damage(damage):
 
 
 func _on_timer_timeout():
-	print("deado")
 	died.emit()
 	emit_signal("died")
 	queue_free()

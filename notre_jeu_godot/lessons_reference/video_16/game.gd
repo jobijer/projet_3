@@ -63,7 +63,6 @@ func _process(delta):
 
 
 func increase_score():
-	print("score")
 	player_score += 1
 	label.text = "Score: " + str(player_score)
 
