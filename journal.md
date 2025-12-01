@@ -363,3 +363,44 @@ J'ai réussi à modifier tout les comportements que je voulait sauf la couleur. 
 1. Changer la couleur de "bullet_3d_better.gd"
 2. Après le fix, implémenter le changement de comportement lorsque que le modèle change
 3. Sans toucher à Blender, trouver le moyen de modifier le modèle directement dans Godot pour pouvoir rapidement créer un troisième modèle qui aura aussi son propre comportement
+
+
+
+## Jérémie
+
+### 2025-11-30
+
+---
+### Tâches réalisées
+
+J'ai créer une scène 'big_bat' qui est un enemie plus gros et avec plus de point de vie.
+J'ai aussi changer sont hitbox pour qu'il match sa grosseur
+J'ai fait en sorte que lorsqu'un monstre spawn, 1 fois sur 5 cest un big_bat (la version boss) et 4 fois sur 5 c'est la chauvre-souris normale
+J'ai remplacé le son que le monstre fait lorsqu'il meurt par un audio que j'ai enregistré moi même (ma propre voix).
+
+---
+### Apprentissages faits avec l’aide de l’IA
+
+Chaque spawner peut instancier une scène différente si le script utilise @export var mob_to_spawn.
+Un spawner peut très facilement avoir une bat normale et une big bat
+Une scène dans Godot, cest comme un LEGO :
+On a le corps(RigidBody3D), le visuel(le mesh), un blocs 'son', un blocs 'timer', un bloc script, un bloc animation
+Il m'a aidé à repérer les bonnes nodes à utiliser.
+Il m'a aidé à comprendre comment le son marche dans ce logiciel.
+
+---
+### Les difficultés rencontrées
+J'ai essayé de changer la couleur du big_bat pour quelle soit différente de celle des chauvre souris normale mais 
+je n'était pas capable, même le AI n'a pas su m'aidé (j'ai essayé au moin 1 heure). J'étais capable de charger le PNG de la texture que je voulais,
+mais la couleur ne changeait pas sur le modèle. En gros, lorsque je changeait la couleur de soit 
+la big_bat ou soit la chauvre-souris normale, les 2 couleurs changeait en même temps.
+J'ai donc essayé de changer la couleur via le script du modèle, mais ca plantait à chaque fois.
+
+
+---
+### Les objectifs de la semaine suivante
+
+Réussir à changer la couleur de 2 enemie avec le même modèle de base sans que les 2 change en même temps.
+Insérer un système de 'score' lorsque les monstres sont détruit
+Changer l'animation des monstre (plus bondissant ou bien avance à une vitesse non constante)
+Essayer de changer le squelette du monstre (sa shape).
